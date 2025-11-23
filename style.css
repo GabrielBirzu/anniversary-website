@@ -1,0 +1,119 @@
+﻿/* Global font and reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Quicksand', 'Nunito', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+}
+
+/* Container */
+.container {
+    text-align: center;
+}
+
+/* Gabriel placeholder */
+.gabriel {
+    margin-bottom: 20px;
+}
+
+    .gabriel .head {
+        width: 350px;
+        height: 350px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0 auto 20px auto;
+    }
+
+/* Prompt text */
+.prompt {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Button wrapper vertical for input row + reCAPTCHA */
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* left-align everything */
+    gap: 10px;
+}
+
+/* Input + button row */
+.input-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Input text */
+.button-wrapper input {
+    padding: 10px;
+    border-radius: 12px;
+    border: 2px solid #0077cc; /* mai închis albastru */
+    font-family: inherit;
+    font-size: 16px;
+    flex: 1; /* să ocupe tot spațiul disponibil */
+    box-sizing: border-box;
+}
+
+/* Button */
+.button-wrapper .button {
+    padding: 11.5px 20px;
+    background-color: #3b7ddd;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: inherit;
+    white-space: nowrap;
+    height: 100%; /* să fie la fel ca input-ul */
+}
+
+    .button-wrapper .button:hover {
+        background-color: #2f5fbf;
+    }
+
+.button-wrapper .captcha-label {
+    font-weight: bold; /* bold text */
+    font-size: 12px; /* font mai mic */
+    color: #888888; /* culoare neutră */
+    margin-left: 4px; /* aliniere la stânga input-ului */
+}
+
+
+.feedback-icon {
+    width: 45px; /* width in pixels */
+    height: 40px; /* height in pixels */
+    display: none; /* hidden by default */
+}
+
+.button-wrapper2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers children horizontally */
+    gap: 10px;
+    width: 100%; /* optional, ensures the container spans full width */
+}
+
+.button-wrapper2 .button2 {
+        padding: 11.5px 20px;
+        background-color: #3b7ddd;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: inherit;
+        white-space: nowrap;
+        width: auto; /* don’t force 100% unless you want full width */
+        min-width: 150px; /* optional, for consistency */
+}
+
+
+

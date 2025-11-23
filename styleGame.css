@@ -1,0 +1,356 @@
+﻿body {
+    margin: 0;
+    background: url('src/images/background.png') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    font-family: 'Poppins', 'Quicksand', 'Nunito', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+}
+
+/* Prevent page scrolling (safety) */
+html, body {
+    height: 100%;
+    overflow: hidden; /* prevents scrolling */
+    touch-action: none; /* prevents touch scrolling on mobile */
+}
+
+/* keep game container full screen */
+#game {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#quest {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#smallVideo {
+    position: fixed;
+    top: 470px; /* adjust vertical position */
+    left: 1105px; /* adjust horizontal position */
+    width: 252px; /* bigger width */
+    height: 205px; /* bigger height */
+    border: 2px solid white; /* optional border */
+    border-radius: 8px; /* optional rounded corners */
+    z-index: -1; /* above background, below/above character as needed */
+    background: black;
+    object-fit: contain;
+}
+
+#game {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* Scale entire character slightly smaller */
+#character {
+    position: absolute;
+    left: 300px;
+    top: 300px;
+    transform: scale(0.85); /* slightly smaller */
+    transform-origin: top left;
+}
+
+/* ---------- HEAD ---------- */
+#head {
+    width: 260px;
+    height: auto;
+    position: absolute;
+    top: -150px; /* adjusted for slightly smaller head */
+    left: 0px;
+}
+
+#skirt {
+    width: 98px; /* match body width */
+    height: 0;
+    border-left: 47px solid transparent;
+    border-right: 47px solid transparent;
+    border-bottom: 100px solid pink;
+    position: absolute;
+    top: 290px; /* sits under torso */
+    left: 45px;
+    z-index: 1;
+}
+
+/* ---------- BODY ---------- */
+#body {
+    width: 95px;
+    height: 170px;
+    background: gray;
+    border-radius: 30px;
+    position: absolute;
+    top: 180px;
+    left: 93.5px;
+}
+
+/* ---------- ARMS ---------- */
+#left-arm, #right-arm {
+    width: 22px;
+    height: 150px;
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 200px;
+    transform-origin: top center;
+}
+
+#left-arm {
+    left: 70px;
+}
+
+#right-arm {
+    left: 190px;
+}
+
+/* ---------- LEGS ---------- */
+#left-leg, #right-leg {
+    width: 22px;
+    height: 180px;
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 370px;
+    transform-origin: top center;
+}
+
+#left-leg {
+    left: 110px;
+}
+
+#right-leg {
+    left: 160px;
+}
+
+/* ---------- Walking animation ---------- */
+.walk #left-leg {
+    animation: step-left 0.35s infinite alternate;
+}
+
+.walk #right-leg {
+    animation: step-right 0.35s infinite alternate;
+}
+
+@keyframes swing-left {
+    from {
+        rotate: 20deg;
+    }
+
+    to {
+        rotate: -20deg;
+    }
+}
+
+@keyframes swing-right {
+    from {
+        rotate: -20deg;
+    }
+
+    to {
+        rotate: 20deg;
+    }
+}
+
+@keyframes step-left {
+    from {
+        rotate: 10deg;
+    }
+
+    to {
+        rotate: -10deg;
+    }
+}
+
+@keyframes step-right {
+    from {
+        rotate: -10deg;
+    }
+
+    to {
+        rotate: 10deg;
+    }
+}
+
+#item {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 1610px;
+    top: 550px;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+#item2 {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    left: 1820px;
+    top: 620px;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+
+#item3 {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 500px;
+    top: 800px;
+    border-radius: 8px;
+    z-index: -1;
+    opacity: 0;
+}
+
+
+#item4 {
+    left: 400px;
+    top: 800px;
+    z-index: -1;
+    opacity: 0;
+    transform: scale(0.5);
+    transform-origin: center;
+}
+
+#item5 {
+    left: 1200px;
+    top: 805px;
+    z-index: -1;
+    opacity: 1;
+    position: absolute;
+    transform: scale(0.3);
+    transform-origin: center;
+}
+
+#letterText {
+    background: #fff;
+    padding: 30px;
+    width: 400px;
+    border-radius: 12px;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+#letterBox {
+    display: none; /* hidden by default */
+    position: fixed; /* or absolute depending on your layout */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.5); /* optional overlay */
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#closeLetterBtn {
+    position: absolute;
+    bottom: 20px;  /* placed under the letter text */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6b6b, #f06595);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#closeLetterBtn:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #f06595, #ff6b6b);
+}
+
+
+#item6 {
+    left: 450px;
+    top: 700px;
+    z-index: -1;
+    opacity: 1;
+    position: absolute;
+    transform: scale(0.5);
+    transform-origin: center;
+    opacity: 0;
+}
+
+
+#letterText2 {
+    background: #fff;
+    padding: 30px;
+    width: 400px;
+    border-radius: 12px;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+#letterBox2 {
+    display: none; /* hidden by default */
+    position: fixed; /* or absolute depending on your layout */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.5); /* optional overlay */
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mirror only the head when moving left */
+#head.left {
+    transform: scaleX(-1);
+    transform-origin: center; /* flips around its center */
+
+}
+
+
+
+#closeLetterBtn2 {
+    position: absolute;
+    bottom: 20px; /* placed under the letter text */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6b6b, #f06595);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#closeLetterBtn2:hover {
+        transform: translateX(-50%) scale(1.05);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        background: linear-gradient(135deg, #f06595, #ff6b6b);
+}
+
+#voucher {
+    display: block; /* Make it a block element so we can center it */
+    margin: 10px auto; /* Top/bottom spacing, auto left/right centers it */
+    max-width: 100%; /* Adjust size relative to container */
+    height: auto; /* Keep aspect ratio */
+}
+

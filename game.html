@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Game Character</title>
+    <link rel="stylesheet" href="styleGame.css">
+</head>
+<body>
+
+    <div id="game">
+        <div id="quest">Quest 1: Ia, pe rând, fiecare pisicuță de pe canapea și du-o pe pat, pentru un somn cât mai odihnitor! </div>
+        <div id="character">
+            <img id="head" src="src/images/head.png" alt="Head" />
+            <div id="skirt"></div>
+            <div id="body"></div>
+            <div id="left-arm"></div>
+            <div id="right-arm"></div>
+            <div id="left-leg"></div>
+            <div id="right-leg"></div>
+        </div>
+        <img id="item" src="src/images/wanda_doarme.png" alt="Item">
+        <img id="item2" src="src/images/snow_doarme.png" alt="Item2">
+        <img id="item3" src="src/images/snow_doarme.png" alt="Item3">
+        <img id="item4" src="src/images/pisici.png" alt="Item4">
+        <img id="item5" src="src/images/scrisoare.jpg" alt="Item5">
+        <img id="item6" src="src/images/cadou.png" alt="Item5">
+
+        <div id="letterBox">
+            <div id="letterText">
+                Ființa mea iubită... <br><br>
+                Nici nu știu cu ce să încep. Au trecut 5 ani pe care i-ai împărțit cu mine. A fost și ușor, dar și greu,
+                și fiecare moment alături de tine a fost o lecție despre iubire, răbdare și bucurie. <br><br>
+                Îți mulțumesc pentru zâmbetul tău, pentru sprijinul tău (mai ales când apăreau cele mai urâte momente de anxietate
+                și pur și simplu prezența ta îmi oferea liniștea de care aveam nevoie) și pentru fiecare clipă care a făcut
+                viața mea mult mai frumoasă. Inima îmi este mereu plină de recunoștință.
+                Sunt mereu recunoscător pentru omul care am ajuns să fiu datorită ție. Am evoluat foarte mult pentru că niciodată nu m-ai
+                oprit din a face ceea ce îmi doresc, iar când eu simțeam că nu sunt pregătit pentru o schimbare, tu mă împingeai de la spate.<br><br>
+                Abia aștept să continuăm să visăm împreună, să râdem împreună și să iubim în fiecare zi, la fel ca acum 5 ani. <br><br>
+                Te iubesc dincolo de cuvinte, <br><br>
+                <em>Pentru o infinitate de vieți alături de tine</em><br>
+                <em>Semnat, un băiat ce este iubit.</em>
+                <button id="closeLetterBtn">Închide</button>
+            </div>
+        </div>
+        <div id="letterBox2">
+            <div id="letterText2">
+                SURPRIZĂ! <br><br>
+                <img id="voucher" src="src/images/masaj.png" alt="Voucher">
+                Chiar sper să te bucuri împreună cu mine de această experiență (60 de minute de masaj). Am așteptat o lună întreagă ca să-ți ofer acest cadou.
+                Este cel mai bun loc pentru masaj din București! A câștigat WORLD LUXURY SPA AWARDS mai mulți ani la rând!<br><br>
+                Asta scrie la descriere: Try a ritual of sensations and delights with your loved one!
+                You will both be pampered with a relaxing full-body massage performed simultaneously by 2 therapists THAIco,
+                in a space specially designed for couples therapy, with a warm and pleasant decor that enhances the atmosphere of romance and relaxation.<br><br>
+                <em>Te iubesc!</em>
+                <button id="closeLetterBtn2">Sfârșit!</button>
+            </div>
+        </div>
+        <video id="smallVideo" loop>
+            <source src="src/images/video.mp4" type="video/mp4">
+        </video>
+
+        <script src="script.js"></script>
+</body>
+</html>
