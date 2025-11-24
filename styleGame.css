@@ -1,163 +1,113 @@
-﻿body {
+﻿/* Reset & full screen */
+body, html {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+#game {
+    width: 100%;
+    height: 100%;
+    position: relative;
     background: url('src/images/background.png') no-repeat center center;
     background-size: cover;
-    overflow: hidden;
-    font-family: 'Poppins', 'Quicksand', 'Nunito', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #fff;
-}
-
-/* Prevent page scrolling (safety) */
-html, body {
-    height: 100%;
-    overflow: hidden; /* prevents scrolling */
-    touch-action: none; /* prevents touch scrolling on mobile */
-}
-
-/* keep game container full screen */
-#game {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
 }
 
 #quest {
-    font-size: 20px;
+    position: absolute;
+    top: 5%;
+    width: 100%;
     text-align: center;
-    margin-top: 60px;
-    margin-bottom: 20px;
+    font-size: 0.9vw;
     color: white;
 }
 
-#smallVideo {
-    position: fixed;
-    top: 470px; /* adjust vertical position */
-    left: 1105px; /* adjust horizontal position */
-    width: 252px; /* bigger width */
-    height: 205px; /* bigger height */
-    border: 2px solid white; /* optional border */
-    border-radius: 8px; /* optional rounded corners */
-    z-index: -1; /* above background, below/above character as needed */
-    background: black;
-    object-fit: contain;
-}
-
-#game {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-}
-
-/* Scale entire character slightly smaller */
+/* Character */
 #character {
     position: absolute;
-    left: 300px;
-    top: 300px;
-    transform: scale(0.85); /* slightly smaller */
-    transform-origin: top left;
+    left: 10%;
+    bottom: 36%;
+    transform: scale(0.85);
+    transform-origin: bottom left;
+    z-index: 2;
 }
 
-/* ---------- HEAD ---------- */
 #head {
-    width: 260px;
-    height: auto;
+    width: 10vw;
     position: absolute;
-    top: -150px; /* adjusted for slightly smaller head */
-    left: 0px;
+    top: -6vw;
+    left: 0;
+    z-index: 2;
 }
 
 #skirt {
-    width: 98px; /* match body width */
+    width: 3.5vw;
     height: 0;
-    border-left: 47px solid transparent;
-    border-right: 47px solid transparent;
-    border-bottom: 100px solid pink;
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    border-bottom: 4vw solid pink;
     position: absolute;
-    top: 290px; /* sits under torso */
-    left: 45px;
-    z-index: 1;
+    top: 12vw;
+    left: 1.5vw;
+    z-index: 2;
 }
 
-/* ---------- BODY ---------- */
 #body {
-    width: 95px;
-    height: 170px;
+    width: 3.5vw;
+    height: 7vw;
     background: gray;
     border-radius: 30px;
     position: absolute;
-    top: 180px;
-    left: 93.5px;
+    top: 7vw;
+    left: 3.5vw;
 }
 
-/* ---------- ARMS ---------- */
 #left-arm, #right-arm {
-    width: 22px;
-    height: 150px;
+    width: 0.9vw;
+    height: 6vw;
     background: white;
     border-radius: 10px;
     position: absolute;
-    top: 200px;
+    top: 8vw;
     transform-origin: top center;
+    z-index: 1;
 }
 
 #left-arm {
-    left: 70px;
+    left: 2.6vw;
 }
 
 #right-arm {
-    left: 190px;
+    left: 7vw;
 }
 
-/* ---------- LEGS ---------- */
 #left-leg, #right-leg {
-    width: 22px;
-    height: 180px;
+    width: 0.9vw;
+    height: 7vw;
     background: white;
     border-radius: 10px;
     position: absolute;
-    top: 370px;
+    top: 14vw;
     transform-origin: top center;
 }
 
 #left-leg {
-    left: 110px;
+    left: 4.2vw;
 }
 
 #right-leg {
-    left: 160px;
+    left: 5.5vw;
 }
 
-/* ---------- Walking animation ---------- */
 .walk #left-leg {
     animation: step-left 0.35s infinite alternate;
 }
 
 .walk #right-leg {
     animation: step-right 0.35s infinite alternate;
-}
-
-@keyframes swing-left {
-    from {
-        rotate: 20deg;
-    }
-
-    to {
-        rotate: -20deg;
-    }
-}
-
-@keyframes swing-right {
-    from {
-        rotate: -20deg;
-    }
-
-    to {
-        rotate: 20deg;
-    }
 }
 
 @keyframes step-left {
@@ -180,172 +130,122 @@ html, body {
     }
 }
 
-#item {
-    width: 300px;
-    height: 300px;
+#head.left {
+    transform: scaleX(-1);
+    transform-origin: center;
+}
+
+/* Items */
+#item, #item2, #item3, #item4, #item5, #item6 {
     position: absolute;
-    left: 1610px;
-    top: 550px;
-    border-radius: 8px;
-    z-index: -1;
+    width: 8vw;
+    height: auto;
+    border-radius: 0.5vw;
+    z-index: 1;
+}
+
+#item {
+    left: 65%;
+    top: 45%;
 }
 
 #item2 {
-    width: 300px;
-    height: 400px;
-    position: absolute;
-    left: 1820px;
-    top: 620px;
-    border-radius: 8px;
-    z-index: -1;
+    left: 80.7%;
+    top: 57.4%;
 }
-
 
 #item3 {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    left: 500px;
-    top: 800px;
-    border-radius: 8px;
-    z-index: -1;
+    left: 18.9%;
+    top: 55.1%;
     opacity: 0;
 }
 
-
 #item4 {
-    left: 400px;
-    top: 800px;
-    z-index: -1;
+    left: 22.9%;
+    top: 55.1%;
     opacity: 0;
-    transform: scale(0.5);
-    transform-origin: center;
 }
 
 #item5 {
-    left: 1200px;
-    top: 805px;
-    z-index: -1;
-    opacity: 1;
-    position: absolute;
-    transform: scale(0.3);
-    transform-origin: center;
+    left: 58%;
+    top: 73%;
+    opacity: 0;
+    transform: scale(0.5);
 }
-
-#letterText {
-    background: #fff;
-    padding: 30px;
-    width: 400px;
-    border-radius: 12px;
-    font-size: 20px;
-    line-height: 1.5;
-    text-align: justify;
-}
-
-#letterBox {
-    display: none; /* hidden by default */
-    position: fixed; /* or absolute depending on your layout */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.5); /* optional overlay */
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-
-#closeLetterBtn {
-    position: absolute;
-    bottom: 20px;  /* placed under the letter text */
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 12px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-    background: linear-gradient(135deg, #ff6b6b, #f06595);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-}
-
-#closeLetterBtn:hover {
-    transform: translateX(-50%) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    background: linear-gradient(135deg, #f06595, #ff6b6b);
-}
-
 
 #item6 {
-    left: 450px;
-    top: 700px;
-    z-index: -1;
-    opacity: 1;
-    position: absolute;
-    transform: scale(0.5);
-    transform-origin: center;
+    left: 21%;
+    top: 62%;
     opacity: 0;
+    transform: scale(0.6);
 }
 
-
-#letterText2 {
-    background: #fff;
-    padding: 30px;
-    width: 400px;
-    border-radius: 12px;
-    font-size: 20px;
-    line-height: 1.5;
-    text-align: justify;
-}
-
-#letterBox2 {
-    display: none; /* hidden by default */
-    position: fixed; /* or absolute depending on your layout */
-    top: 50%;
-    left: 50%;
+/* Video */
+#smallVideo {
+    position: absolute;
+    top: 45.2%;
+    left: 48.1%;
+    width: 10vw;
+    aspect-ratio: 1 / 0.82;
+    background: black;
+    border: 2px solid white;
+    border-radius: 8px;
+    z-index: 1;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.5); /* optional overlay */
+    object-fit: contain;
+}
+
+/* Overlay */
+#letterBox, #letterBox2 {
+    display: flex;
+    flex-direction: column; /* stack text and button vertically */
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(0,0,0,0.5);
     justify-content: center;
     align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    padding: 1vw; /* some padding for smaller screens */
 }
 
-/* Mirror only the head when moving left */
-#head.left {
-    transform: scaleX(-1);
-    transform-origin: center; /* flips around its center */
-
+/* Letter text */
+#letterText, #letterText2 {
+    background: #fff;
+    padding: 1.5vw 2vw;
+    width: 50vw; /* narrower than before */
+    max-width: 400px; /* prevents it from getting too wide on large screens */
+    font-size: 0.7vw; /* smaller font */
+    border-radius: 1vw;
+    text-align: justify;
+    position: relative;
+    z-index: 10000;
+    line-height: 1.4; /* better readability */
 }
 
-
-
-#closeLetterBtn2 {
-    position: absolute;
-    bottom: 20px; /* placed under the letter text */
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 12px 25px;
-    font-size: 18px;
+/* Button under letter */
+#closeLetterBtn, #closeLetterBtn2 {
+    margin-top: 1vw; /* space above button */
+    padding: 0.6vw 1.5vw; /* smaller button */
+    font-size: 0.9vw; /* smaller font */
     font-weight: bold;
     color: #fff;
     background: linear-gradient(135deg, #ff6b6b, #f06595);
     border: none;
-    border-radius: 50px;
+    border-radius: 1vw;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 0.5vw 1vw rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
 
-#closeLetterBtn2:hover {
-        transform: translateX(-50%) scale(1.05);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        background: linear-gradient(135deg, #f06595, #ff6b6b);
-}
+    #closeLetterBtn:hover, #closeLetterBtn2:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0.7vw 1.5vw rgba(0,0,0,0.3);
+    }
 
 #voucher {
     display: block; /* Make it a block element so we can center it */
@@ -353,4 +253,3 @@ html, body {
     max-width: 100%; /* Adjust size relative to container */
     height: auto; /* Keep aspect ratio */
 }
-
