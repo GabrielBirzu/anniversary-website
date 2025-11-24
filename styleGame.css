@@ -150,8 +150,9 @@ body, html {
 }
 
 #item2 {
-    left: 80.7%;
-    top: 57.4%;
+    left: 79%;
+    top: 52.4%;
+    transform: scale(1.2);
 }
 
 #item3 {
