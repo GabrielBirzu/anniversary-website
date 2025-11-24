@@ -88,7 +88,7 @@ closeLetterBtn2.addEventListener("click", () => {
 // Movement and pickups
 document.addEventListener("keydown", e => {
     let moved = false;
-    const moveStep = 1.5; // % of viewport per key press
+    const moveStep = 0.6; // % of viewport per key press
 
     if (e.key === "ArrowLeft") {
         charX = Math.max(0, charX - moveStep);
@@ -213,3 +213,4 @@ function playVideoWithAudio() {
 }
 window.addEventListener('click', playVideoWithAudio);
 window.addEventListener('keydown', playVideoWithAudio);
+
