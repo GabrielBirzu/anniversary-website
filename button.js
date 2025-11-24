@@ -24,7 +24,7 @@
     // Questions
     const questions = [
         { question: "Unde ne-am cunoscut?", answers: ["dating", "facebook"] },
-        { question: "Când ți-am zis prima dată TE IUBESC?", answers: ["nastere", "ziua mea"] },
+        { question: "Când ți-am zis prima dată TE IUBESC?", answers: ["nastere", "ziua mea", "capac", "cutie", "scris"] },
         { question: "Câte piruete am făcut când ne-am văzut prima dată?", answers: ["2", "doua"] },
         { question: "Ce iubim noi cel mai mult?", answers: ["zapada", "pisica", "pisicile", "frigul", "muntele", "aventura", "vacantele", "calatoriile"] }
     ];
@@ -117,3 +117,4 @@
 
 
 });
+
