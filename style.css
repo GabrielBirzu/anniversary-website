@@ -115,5 +115,8 @@ body {
         min-width: 150px; /* optional, for consistency */
 }
 
+#smallVideo2 {
+    height: 1px;
+}
 
 

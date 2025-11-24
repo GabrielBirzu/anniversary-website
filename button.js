@@ -25,6 +25,7 @@
     const questions = [
         { question: "Unde ne-am cunoscut?", answers: ["dating", "facebook"] },
         { question: "Când ți-am zis prima dată TE IUBESC?", answers: ["nastere", "ziua mea"] },
+        { question: "Câte piruete am făcut când ne-am văzut prima dată?", answers: ["2", "doua"] },
         { question: "Ce iubim noi cel mai mult?", answers: ["zapada", "pisica", "pisicile", "frigul", "muntele", "aventura", "vacantele", "calatoriile"] }
     ];
     let currentQuestion = 0;
@@ -102,6 +103,17 @@
 
     button.addEventListener("click", animateStart);
     input.addEventListener("input", inputChangeHandler);
+
+
+    // Video autoplay
+    const video2 = document.getElementById('smallVideo2');
+    function playVideoWithAudio() {
+        video2.play().catch(err => console.log("Video could not autoplay:", err));
+        window.removeEventListener('click', playVideoWithAudio);
+        window.removeEventListener('keydown', playVideoWithAudio);
+    }
+    window.addEventListener('click', playVideoWithAudio);
+    window.addEventListener('keydown', playVideoWithAudio);
 
 
 });
